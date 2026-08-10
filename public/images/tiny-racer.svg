@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title">
+  <title id="title">Tiny Racer hamper illustration</title>
+  <rect width="900" height="900" rx="72" fill="#dceae7"/>
+  <path d="M130 574h640l-51 159H181z" fill="#fff9ed" stroke="#57206f" stroke-width="18"/>
+  <path d="M201 276h405l105 211H141z" fill="#72a8a5" stroke="#57206f" stroke-width="18"/>
+  <path d="M309 423l70-116h161l75 116z" fill="#f8dc9a" stroke="#57206f" stroke-width="16"/>
+  <path d="M215 423h438c48 0 87 39 87 87v64H128v-64c0-48 39-87 87-87z" fill="#e68f69" stroke="#57206f" stroke-width="18"/>
+  <circle cx="265" cy="579" r="66" fill="#57206f"/><circle cx="265" cy="579" r="27" fill="#f8dc9a"/><circle cx="621" cy="579" r="66" fill="#57206f"/><circle cx="621" cy="579" r="27" fill="#f8dc9a"/>
+  <circle cx="191" cy="497" r="27" fill="#fff5c2"/><circle cx="677" cy="497" r="27" fill="#fff5c2"/>
+</svg>

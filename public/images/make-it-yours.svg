@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title">
+  <title id="title">Custom gift hamper illustration</title>
+  <rect width="900" height="900" rx="72" fill="#eadff0"/>
+  <circle cx="190" cy="192" r="82" fill="#f1ad86"/><circle cx="724" cy="218" r="54" fill="#d2aa59"/>
+  <path d="M190 383h520v345H190z" fill="#fffaf2" stroke="#57206f" stroke-width="18"/>
+  <path d="M159 310h582v132H159z" fill="#d7b9dd" stroke="#57206f" stroke-width="18"/>
+  <path d="M450 310v418" stroke="#57206f" stroke-width="18"/>
+  <path d="M442 310c-113-3-178-82-130-132 48-49 130 13 138 118M458 310c113-3 178-82 130-132-48-49-130 13-138 118" fill="none" stroke="#57206f" stroke-width="18" stroke-linecap="round"/>
+  <path d="M376 527c45-73 134-9 74 48 60-57 149 7 74 81l-74 70-74-70c-39-39-35-91 0-129z" fill="#e58d89"/>
+</svg>

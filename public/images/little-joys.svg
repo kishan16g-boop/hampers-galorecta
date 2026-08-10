@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title">
+  <title id="title">Little Joys gift hamper illustration</title>
+  <rect width="900" height="900" rx="72" fill="#f8dfd4"/>
+  <circle cx="690" cy="178" r="115" fill="#efb9aa" opacity=".7"/>
+  <path d="M180 334h540v390H180z" fill="#fff8ef" stroke="#57206f" stroke-width="18"/>
+  <path d="M154 274h592v122H154z" fill="#f4a99f" stroke="#57206f" stroke-width="18"/>
+  <path d="M450 274v450" stroke="#57206f" stroke-width="18"/>
+  <path d="M442 272c-112-4-171-82-124-129 48-48 126 14 132 115M458 272c112-4 171-82 124-129-48-48-126 14-132 115" fill="none" stroke="#57206f" stroke-width="18" stroke-linecap="round"/>
+  <path d="M260 515h118l30 51h-177z" fill="#75a9bb"/><circle cx="278" cy="580" r="24" fill="#57206f"/><circle cx="365" cy="580" r="24" fill="#57206f"/>
+  <path d="M527 497c30-50 93-3 45 39 48-42 112 5 44 71l-44 42-44-42c-34-33-25-74-1-110z" fill="#f0a84e"/>
+</svg>

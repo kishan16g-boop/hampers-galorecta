@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title">
+  <title id="title">Her Happy Things hamper illustration</title>
+  <rect width="900" height="900" rx="72" fill="#f4ddec"/>
+  <path d="M185 378h530v350H185z" fill="#fff9f4" stroke="#57206f" stroke-width="18"/>
+  <path d="M154 310h592v126H154z" fill="#c594c4" stroke="#57206f" stroke-width="18"/>
+  <path d="M450 310v418" stroke="#57206f" stroke-width="18"/>
+  <path d="M443 309c-98-2-171-70-137-124 37-58 132 2 144 105M457 309c98-2 171-70 137-124-37-58-132 2-144 105" fill="none" stroke="#57206f" stroke-width="18" stroke-linecap="round"/>
+  <path d="M266 535c34-64 113-64 147 0-34 64-113 64-147 0z" fill="#e6a0aa"/><path d="M293 535c22-29 65-29 91 0-26 29-69 29-91 0z" fill="#fff4ed"/>
+  <path d="M541 510h98v142h-98z" fill="#efbd66" stroke="#57206f" stroke-width="12"/><path d="M561 547h58" stroke="#fff8ef" stroke-width="10"/>
+</svg>

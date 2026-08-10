@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title">
+  <title id="title">Bookish Bliss hamper illustration</title>
+  <rect width="900" height="900" rx="72" fill="#efe7d3"/>
+  <path d="M120 682c175-96 264-68 330 9 100-116 224-93 330-9V262c-135-47-251-14-330 82-79-96-195-129-330-82z" fill="#fffaf1" stroke="#57206f" stroke-width="18"/>
+  <path d="M450 344v347" stroke="#57206f" stroke-width="18"/>
+  <path d="M179 337c97-19 168 3 224 69M179 408c89-16 160 4 224 67M497 406c68-65 143-85 224-67M497 475c64-62 139-82 224-67" fill="none" stroke="#c18470" stroke-width="14" stroke-linecap="round"/>
+  <path d="M665 128l76 73-190 197-59 13 10-61z" fill="#e5a14b" stroke="#57206f" stroke-width="14"/>
+  <circle cx="208" cy="173" r="58" fill="#adccbd"/><path d="M208 139v68M174 173h68" stroke="#57206f" stroke-width="12" stroke-linecap="round"/>
+</svg>
