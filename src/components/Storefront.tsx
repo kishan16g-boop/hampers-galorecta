@@ -11,13 +11,14 @@ import {
   Minus,
   PackageCheck,
   Plus,
+  ShieldCheck,
   ShoppingBag,
   Sparkles,
   X,
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import products from '@/data/products'
-import { InstagramOrderPanel } from './BuyButton'
+import { CheckoutButton } from './BuyButton'
 
 type Cart = Record<number, number>
 
@@ -141,7 +142,7 @@ export function Storefront() {
             <a href="#custom" className="text-link">Make it personal</a>
           </div>
           <div className="trust-line">
-            <span><Instagram /> Order via Instagram</span>
+            <span><ShieldCheck /> Secure payment</span>
             <span><PackageCheck /> Carefully packed</span>
             <span><MapPin /> Karnataka based</span>
           </div>
@@ -250,7 +251,7 @@ export function Storefront() {
         </div>
         <div className="steps-grid">
           <article><span>01</span><ShoppingBag /><h3>Choose</h3><p>Pick a ready hamper or start with a personalised one.</p></article>
-          <article><span>02</span><Instagram /><h3>Message us</h3><p>Share your bag and contact details, then confirm your order on Instagram.</p></article>
+          <article><span>02</span><ShieldCheck /><h3>Pay securely</h3><p>Complete payment through the protected Stripe checkout.</p></article>
           <article><span>03</span><Gift /><h3>We wrap</h3><p>Your gifts are checked, arranged and packed with care.</p></article>
           <article><span>04</span><PackageCheck /><h3>We deliver</h3><p>Your hamper begins its journey from Chitradurga.</p></article>
         </div>
@@ -327,11 +328,12 @@ export function Storefront() {
                 </div>
                 <div className="cart-summary">
                   <div><span>Subtotal</span><strong>{rupees.format(cartTotal)}</strong></div>
-                  <p>Delivery cost, if applicable, is confirmed over Instagram.</p>
-                  <InstagramOrderPanel
+                  <p>Delivery cost, if applicable, is confirmed at checkout.</p>
+                  <CheckoutButton
                     items={cartItems.map(({ product, quantity }) => ({ productId: product.id, quantity }))}
-                    label={`Send order for ${rupees.format(cartTotal)}`}
+                    label={`Pay ${rupees.format(cartTotal)} securely`}
                   />
+                  <span className="secure-note"><ShieldCheck /> Secure checkout powered by Stripe</span>
                 </div>
               </>
             ) : (
