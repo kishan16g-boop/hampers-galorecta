@@ -4,7 +4,9 @@ import {
   Check,
   Gift,
   Heart,
+  Instagram,
   MapPin,
+  MessageCircle,
   Menu,
   Minus,
   PackageCheck,
@@ -19,6 +21,9 @@ import products from '@/data/products'
 import { CheckoutButton } from './BuyButton'
 
 type Cart = Record<number, number>
+
+const INSTAGRAM_URL = 'https://www.instagram.com/hampers_galorecta'
+const INSTAGRAM_HANDLE = '@hampers_galorecta'
 
 const rupees = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -90,8 +95,18 @@ export function Storefront() {
           <a href="#shop" onClick={() => setMenuOpen(false)}>Shop hampers</a>
           <a href="#story" onClick={() => setMenuOpen(false)}>Our story</a>
           <a href="#delivery" onClick={() => setMenuOpen(false)}>Delivery</a>
+          <a href="#instagram" onClick={() => setMenuOpen(false)}>Order on Instagram</a>
         </nav>
         <div className="header-actions">
+          <a
+            className="icon-button instagram-link"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Message us on Instagram"
+          >
+            <Instagram size={19} />
+          </a>
           <button
             className="icon-button menu-button"
             type="button"
@@ -242,12 +257,48 @@ export function Storefront() {
         </div>
       </section>
 
+      <section className="instagram-section" id="instagram">
+        <div className="instagram-copy">
+          <p className="eyebrow"><MessageCircle size={15} /> Prefer to chat first?</p>
+          <h2>Order directly on Instagram</h2>
+          <p>
+            Scan the code or visit our page and send us a message—tell us the
+            occasion and we will help you pick or personalise the perfect hamper.
+          </p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="button button-primary"
+          >
+            <Instagram size={18} /> {INSTAGRAM_HANDLE}
+          </a>
+        </div>
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="instagram-qr"
+          aria-label="Open Hampers Galore on Instagram"
+        >
+          <img src="/images/instagram-qr.png" alt="QR code to Hampers Galore Instagram profile" />
+        </a>
+      </section>
+
       <footer>
         <div className="footer-brand">
           <img src="/images/hampers-galore-logo.jpg" alt="Hampers Galore logo" />
           <div><strong>Hampers Galore</strong><span>Gifts made to feel personal.</span></div>
         </div>
         <div><p>Based in Chitradurga, Karnataka, India</p><p>All prices shown in Indian rupees.</p></div>
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="footer-instagram"
+        >
+          <Instagram size={16} /> {INSTAGRAM_HANDLE}
+        </a>
         <a href="#top">Back to top ↑</a>
       </footer>
 
