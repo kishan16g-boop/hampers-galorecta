@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { ArrowLeft, Check, Gift, MapPin, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, Check, Gift, Instagram, MapPin } from 'lucide-react'
 import products from '../../data/products'
 import { BuyButton } from '@/components/BuyButton'
 
@@ -42,7 +42,7 @@ function ProductPage() {
           </div>
           <BuyButton productId={product.id} />
           <div className="detail-trust">
-            <span><ShieldCheck /> Secure online payment</span>
+            <span><Instagram /> Order via Instagram</span>
             <span><Gift /> Gift-ready packing</span>
             <span><MapPin /> Packed in Chitradurga</span>
           </div>
