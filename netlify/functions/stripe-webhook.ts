@@ -1,8 +1,9 @@
 import type { Config } from '@netlify/functions'
-import { and, eq } from 'drizzle-orm'
+import { and, eq, inArray } from 'drizzle-orm'
 import Stripe from 'stripe'
 import { db } from '../../db/index.js'
 import { orders } from '../../db/schema.js'
+import { getInstagramConfig, sendInstagramOrder } from './lib/instagram.js'
 
 export default async (request: Request) => {
   if (request.method !== 'POST') {
@@ -46,7 +47,7 @@ export default async (request: Request) => {
       const paymentFailed = event.type === 'checkout.session.async_payment_failed'
       const paymentPaid = !paymentFailed && session.payment_status === 'paid'
 
-      await db
+      const [updatedOrder] = await db
         .update(orders)
         .set({
           status: paymentFailed ? 'failed' : paymentPaid ? 'paid' : 'processing',
@@ -64,10 +65,67 @@ export default async (request: Request) => {
             eq(orders.currency, session.currency ?? ''),
           ),
         )
+        .returning({ id: orders.id })
+
+      if (paymentPaid && updatedOrder) {
+        await notifyInstagram(updatedOrder.id)
+      }
     }
   }
 
   return Response.json({ received: true })
+}
+
+async function notifyInstagram(orderId: number) {
+  const config = getInstagramConfig()
+  if (!config) return
+
+  const [order] = await db
+    .update(orders)
+    .set({
+      instagramNotificationStatus: 'sending',
+      instagramNotificationError: null,
+    })
+    .where(
+      and(
+        eq(orders.id, orderId),
+        eq(orders.status, 'paid'),
+        inArray(orders.instagramNotificationStatus, ['pending', 'failed']),
+      ),
+    )
+    .returning({
+      id: orders.id,
+      amount: orders.amount,
+      currency: orders.currency,
+      items: orders.items,
+      customerName: orders.customerName,
+      customerEmail: orders.customerEmail,
+      customerPhone: orders.customerPhone,
+      shippingAddress: orders.shippingAddress,
+    })
+
+  if (!order) return
+
+  try {
+    await sendInstagramOrder(config, order)
+    await db
+      .update(orders)
+      .set({
+        instagramNotificationStatus: 'sent',
+        instagramNotifiedAt: new Date(),
+        instagramNotificationError: null,
+      })
+      .where(eq(orders.id, order.id))
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Instagram notification failed'
+    await db
+      .update(orders)
+      .set({
+        instagramNotificationStatus: 'failed',
+        instagramNotificationError: message.slice(0, 500),
+      })
+      .where(eq(orders.id, order.id))
+  }
 }
 
 export const config: Config = {

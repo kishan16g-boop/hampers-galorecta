@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { Check, Clock3, Gift, TriangleAlert } from 'lucide-react'
+import { Check, Clock3, Gift, Instagram, TriangleAlert } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { getCheckoutStatus, type CheckoutStatus } from '@/lib/stripe'
 
@@ -99,7 +99,18 @@ function StatusCard({
         <h1>{title}</h1>
         <p>{description}</p>
         {paid ? (
-          <div className="status-note"><Gift /><span><strong>What happens next?</strong> The hamper is checked, wrapped and prepared for delivery from Chitradurga.</span></div>
+          <>
+            <div className="status-note"><Gift /><span><strong>What happens next?</strong> The hamper is checked, wrapped and prepared for delivery from Chitradurga.</span></div>
+            <a
+              href="https://www.instagram.com/hampers_galorecta/"
+              className="button button-secondary"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Message Hampers Galore privately on Instagram"
+            >
+              <Instagram /> Message us about your order
+            </a>
+          </>
         ) : null}
         <Link to="/" className="button button-primary">Continue shopping</Link>
       </div>

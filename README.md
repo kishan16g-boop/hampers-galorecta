@@ -26,6 +26,12 @@ Create a Stripe webhook endpoint for `/api/stripe-webhook` and subscribe it to `
 
 Checkout uses INR, accepts Indian delivery addresses, collects a phone number, and stores order status and delivery details only after Stripe verifies the webhook event.
 
+## Instagram order notifications
+
+Paid orders can be sent through the Instagram Messaging API after the Stripe webhook verifies payment. Configure `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_BUSINESS_ACCOUNT_ID`, and `INSTAGRAM_NOTIFICATION_RECIPIENT_ID` in Netlify. The access token must belong to the professional Instagram account connected to the Meta app, and the recipient must be an Instagram-scoped user who has already opened a messaging conversation with that account. Meta does not allow an app to start an arbitrary conversation or address a recipient by username alone.
+
+If Instagram is not configured, checkout and order recording continue normally and the notification remains pending. Customers also receive a link to message `@hampers_galorecta` privately after successful payment.
+
 ## Edit the shop
 
 - Edit product names, prices, descriptions, categories, and hamper contents in `src/data/products.ts`.

@@ -11,6 +11,11 @@ export const orders = pgTable('orders', {
   customerEmail: text('customer_email'),
   customerPhone: text('customer_phone'),
   shippingAddress: text('shipping_address'),
+  instagramNotificationStatus: text('instagram_notification_status')
+    .notNull()
+    .default('pending'),
+  instagramNotifiedAt: timestamp('instagram_notified_at'),
+  instagramNotificationError: text('instagram_notification_error'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   paidAt: timestamp('paid_at'),
 })
